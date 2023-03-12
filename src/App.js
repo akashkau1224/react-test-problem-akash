@@ -9,12 +9,17 @@ export default class App extends React.Component {
   }
 
   //handler goes here
+  function changeText() {
+    const[active, setActive] = useState(false);
+    const handleClick = () => {
+      setActive(!active);
+    };
+  };
 
   render() {
     return (
       <div>
-        <p>Greetings!</p>
-        <p>Button goes here</p>
+        <Button onClick = {handleClick}> {active ? "thanks" : "click me"} </Button>
       </div>
     );
   }
