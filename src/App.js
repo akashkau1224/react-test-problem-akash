@@ -10,16 +10,16 @@ export default class App extends React.Component {
 
   //handler goes here
   function changeText() {
-    const[active, setActive] = useState(false);
-    const handleClick = () => {
-      setActive(!active);
+    const[curr, setCurr] = useState(false);
+    const clicker = () => {
+      setCurr(!curr);
     };
   };
 
   render() {
     return (
       <div>
-        <Button onClick = {handleClick}> {active ? "thanks" : "click me"} </Button>
+        <Button onClick = {clicker}> {curr ? "thanks" : "click me"} </Button>
       </div>
     );
   }
