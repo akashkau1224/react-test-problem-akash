@@ -1,4 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import ButtonComponent from './ButtonComponent';
 
 // import your story from App.stories.js
 import {Template, Click} from '/workspaces/react-test-problem-akash/src/App.stories.js';
@@ -11,7 +13,15 @@ test ("Checks if original text is valid" , () => {
 
 test ("Checks if clicked text is valid" , () => {
     render(<Click/>);
-    expect(screen.getByText("thanks")).not.toBeNull();
+    
+    //const cButton = screen.findByLabelText('click me');
+    
+    //userEvent.click(cButton);
+    //Click.play(container);
+    
+    //fireEvent.click(getByText("click me"));
+    const resolved = screen.findByLabelText("click me").resolves;
+    expect(screen.findByLabelText("thanks")).not.toBeNull();
 }
 );
 
