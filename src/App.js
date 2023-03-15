@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ButtonComponent from '/workspaces/react-test-problem-akash/src/ButtonComponent.js';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -9,17 +10,12 @@ export default class App extends React.Component {
   }
 
   //handler goes here
-  function changeText() {
-    const[curr, setCurr] = useState(false);
-    const clicker = () => {
-      setCurr(!curr);
-    };
-  };
+  
 
   render() {
     return (
       <div>
-        <Button onClick = {clicker}> {curr ? "thanks" : "click me"} </Button>
+        <ButtonComponent > 'ButtonComponent' </ButtonComponent>
       </div>
     );
   }
